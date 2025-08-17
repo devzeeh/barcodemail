@@ -1,5 +1,7 @@
 // Package barcodemail provides functionality to generate barcodes and QR codes.
 // It includes methods to create barcodes, QR codes, and send emails with embedded images.
+//
+// More info: https://github.com/devzeeh/barcodemail
 package barcodemail
 
 import (
