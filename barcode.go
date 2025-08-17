@@ -3,7 +3,7 @@
 package barcodemail
 
 import (
-	_"fmt"
+	_ "fmt"
 	"image/png"
 	"math/rand"
 	"os"
@@ -30,30 +30,29 @@ func filepath(filename string) *os.File {
 	return fileBarcode
 }
 
-
 // Barcode generates a barcode image and returns the data and file path.
-// Qrcode generates a QR code with a random 4-digit number.	
+// Qrcode generates a QR code with a random 4-digit number.
 // Example: "QRcode1234"
 func Qrcode() (string, string) {
-    qrData := "QRcode" + strconv.Itoa(randomQR)
+	qrData := "QRcode" + strconv.Itoa(randomQR)
 
-    qrcode, err := qr.Encode(qrData, qr.M, qr.Auto)
-    if err != nil {
-        panic(err)
-    }
+	qrcode, err := qr.Encode(qrData, qr.M, qr.Auto)
+	if err != nil {
+		panic(err)
+	}
 
-    qrcode, err = barcode.Scale(qrcode, 256, 256)
-    if err != nil {
-        panic(err)
-    }
+	qrcode, err = barcode.Scale(qrcode, 256, 256)
+	if err != nil {
+		panic(err)
+	}
 
-    filename := "qrcode.png"
-    file := filepath(filename)
-    defer file.Close()
+	filename := "qrcode.png"
+	file := filepath(filename)
+	defer file.Close()
 
-    if err = png.Encode(file, qrcode); err != nil {
-        panic(err)
-    }
+	if err = png.Encode(file, qrcode); err != nil {
+		panic(err)
+	}
 
-    return  qrData, filename
+	return qrData, filename
 }

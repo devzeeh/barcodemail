@@ -73,7 +73,6 @@ func Mail(Mail MailData) {
 	fmt.Println("HTML email with barcode and QR code sent successfully!")
 }
 
-
 // QrEmbed returns the content ID for embedding QR codes in emails.
 // This is a placeholder function that can be customized as needed.
 // It is used to generate a content ID for the QR code image in the email.
