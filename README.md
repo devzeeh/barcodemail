@@ -15,7 +15,7 @@ Generate **QR codes** in Go, and send them via email.
 Feel free to use this project, and don’t hesitate to [open an issue](https://github.com/devzeeh/barcodemail/issues) if you find a bug or want to suggest an improvement!
 
 ## Example
-```
+```go
 package main
 
 import (
