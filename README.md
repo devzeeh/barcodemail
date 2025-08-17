@@ -26,13 +26,13 @@ import (
 )
 
 func main() {
-	// sender credentials
+	// sender credential
 	email.SenderEmail("Sender Email")
 	email.SenderPassword("Sender Password")
 	email.SenderName("Sender Name")
 
 	qrData, filePath := barcodemail.Qrcode() // Generate QR code and get data and file path
-	cid := email.QrEmbed("QRCODE") // Content-ID for the embedded image
+	cid := email.QrEmbed("QRCODE")           // Content-ID for the embedded image
 
 	// Email content
 	htmlBody := fmt.Sprintf(`
@@ -52,11 +52,12 @@ func main() {
 		Subject: "Subject of the email",
 		Body:    htmlBody,
 		Qrcode:  filePath,
-		Cid: cid,
+		Cid:     cid,
 	}
 
 	email.Mail(sendData)
 }
+
 ```
 
 ## Requirements
