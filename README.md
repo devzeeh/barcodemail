@@ -27,9 +27,9 @@ import (
 
 func main() {
 	// sender credential
-	email.SenderEmail("Sender Email")
-	email.SenderPassword("Sender Password")
-	email.SenderName("Sender Name")
+	email.SenderEmail("sender@test.com")
+	email.SenderPassword("ABCD EF12 3456")
+	email.SenderName("Devzeeh")
 
 	qrData, filePath := barcodemail.Qrcode() // Generate QR code and get data and file path
 	cid := email.QrEmbed("QRCODE")           // Content-ID for the embedded image
@@ -48,7 +48,7 @@ func main() {
 	`, qrData, cid)
 
 	sendData := email.MailData{
-		ToEmail: "Receiver Email",
+		ToEmail: "user@test.com",
 		Subject: "Subject of the email",
 		Body:    htmlBody,
 		Qrcode:  filePath,
