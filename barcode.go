@@ -10,7 +10,7 @@ import (
 	_"math/rand"
 	"os"
 	_ "strconv"
-	_"time"
+	_"time" 
 
 	"github.com/boombuler/barcode"
 	_ "github.com/boombuler/barcode/code128"
