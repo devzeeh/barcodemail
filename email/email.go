@@ -1,5 +1,5 @@
 // Package email provides functionality to send HTML emails with embedded QR codes.
-// It includes methods to set sender credentials, create email content, and send emails using the built-in gomail package. 
+// It includes methods to set sender credentials, create email content, and send emails using the built-in gomail package.
 package email
 
 import (

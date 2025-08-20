@@ -5,23 +5,23 @@
 package barcodemail
 
 import (
-	_ "fmt"
+	"fmt"
 	"image/png"
-	"math/rand"
+	_"math/rand"
 	"os"
-	"strconv"
-	"time"
+	_ "strconv"
+	_"time" 
 
 	"github.com/boombuler/barcode"
 	_ "github.com/boombuler/barcode/code128"
 	"github.com/boombuler/barcode/qr"
 )
 
-var (
-	vrand         = rand.New(rand.NewSource(time.Now().UnixNano()))
-	randomBarcode = vrand.Intn(9000) + 1000 // Always generate a 4-digit random number (1000-9999)
-	randomQR      = vrand.Intn(9000) + 1000
-)
+//var (
+//	vrand         = rand.New(rand.NewSource(time.Now().UnixNano()))
+//	randomBarcode = vrand.Intn(9000) + 1000 // Always generate a 4-digit random number (1000-9999)
+//	randomQR      = vrand.Intn(9000) + 1000
+//)
 
 // Filepath creates the file and returns the file pointer
 func filepath(filename string) *os.File {
@@ -32,11 +32,25 @@ func filepath(filename string) *os.File {
 	return fileBarcode
 }
 
+// Make a customize QR data.
+//
+// Qrdata returns a string that can be used as QR code data and an error if the data is empty.
+func Qrdata(data string) (string, error) {
+	if data == "" {
+		return "", fmt.Errorf("QR data cannot be empty")
+	}
+	return data, nil
+}
+
 // Barcode generates a barcode image and returns the data and file path.
 // Qrcode generates a QR code with a random 4-digit number.
-// Example: "QRcode1234"
 func Qrcode() (string, string) {
-	qrData := "QRcode" + strconv.Itoa(randomQR)
+	//qrData := "QRcode" + strconv.Itoa(randomQR)
+	// Customize QR data
+	qrData, err := Qrdata("")
+	if err != nil {
+		panic(err)
+	}
 
 	qrcode, err := qr.Encode(qrData, qr.M, qr.Auto)
 	if err != nil {
