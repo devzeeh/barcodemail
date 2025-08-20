@@ -15,6 +15,10 @@ import (
 	"github.com/boombuler/barcode/qr"
 )
 
+// Random number generator for generating unique barcodes and QR codes.
+// It uses a seeded random number generator to ensure different results on each run.
+// The random numbers are always 4 digits long (1000-9999).
+// This is useful for generating unique identifiers for barcodes and QR codes.
 var (
 	vrand         = rand.New(rand.NewSource(time.Now().UnixNano()))
 	randomBarcode = vrand.Intn(9000) + 1000 // Always generate a 4-digit random number (1000-9999)
