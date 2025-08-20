@@ -2,21 +2,19 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/devzeeh/barcodemail"
 	"github.com/devzeeh/barcodemail/email"
 )
 
 func main() {
-	// load an env
-
-	email.SenderEmail(os.Getenv("AUTH_EMAIL"))
-	email.SenderPassword(os.Getenv("AUTH_PASSWORD"))
-	email.SenderName("Barcode")
+	//
+	email.SenderEmail("sender@test.com")
+	email.SenderPassword("ABCD EF12 3456")
+	email.SenderName("Devzeeh")
 
 	data, file := barcodemail.Qrcode()
-	contentID := email.QrEmbed("CODE")
+	contentID := email.QrEmbed("QRCODE") // Content-ID for the embedded image
 
 	//
 	body := fmt.Sprintf(`
