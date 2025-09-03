@@ -54,7 +54,7 @@ func Mail(Mail MailData) {
 	smtpHost := "smtp.gmail.com"
 	smtpPort := 587
 
-	// Create
+	// Create email
 	m := gomail.NewMessage()
 	m.SetHeader("From", fmt.Sprintf("%s <%s>", senderName, senderEmail))
 	m.SetHeader("To", Mail.From)
