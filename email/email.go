@@ -38,7 +38,7 @@ func SenderName(name string) {
 // MailData holds the data required to send an email.
 // It includes the recipient's email, subject, body, QR code file path, and content ID for embedding images.
 type MailData struct {
-	ToEmail string // Recipient's email address
+	From    string // Recipient's email address
 	Subject string // Subject of the email
 	Body    string // HTML body of the email
 	Qrcode  string // File path of the QR code image
@@ -50,14 +50,14 @@ type MailData struct {
 func Mail(Mail MailData) {
 	// sanity check
 
-	// SMTP Config
+	// SMTP Config of Gmail
 	smtpHost := "smtp.gmail.com"
 	smtpPort := 587
 
 	// Create email
 	m := gomail.NewMessage()
 	m.SetHeader("From", fmt.Sprintf("%s <%s>", senderName, senderEmail))
-	m.SetHeader("To", Mail.ToEmail)
+	m.SetHeader("To", Mail.From)
 	m.SetHeader("Subject", Mail.Subject)
 	m.SetBody("text/html", Mail.Body)
 
