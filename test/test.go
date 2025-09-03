@@ -30,7 +30,7 @@ func main() {
 	`, data, contentID)
 
 	sendData := email.MailData{
-		ToEmail: "user@test.com",
+		From: "user@test.com",
 		Subject: "Barcodemail",
 		Body:    body,
 		Qrcode:  file,

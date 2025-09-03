@@ -21,8 +21,7 @@ import (
 // This is useful for generating unique identifiers for barcodes and QR codes.
 var (
 	vrand         = rand.New(rand.NewSource(time.Now().UnixNano()))
-	randomBarcode = vrand.Intn(9000) + 1000 // Always generate a 4-digit random number (1000-9999)
-	randomQR      = vrand.Intn(9000) + 1000
+	randomQR      = vrand.Intn(9000) + 1000// Always generate a 4-digit random number (1000-9999)
 )
 
 // Filepath creates the file and returns the file pointer
