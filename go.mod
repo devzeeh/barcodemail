@@ -3,8 +3,7 @@ module github.com/devzeeh/barcodemail
 go 1.25.0
 
 retract v1.0.0 // published by mistake
-
-retract v0.1.0-beta.1 // wrong major version, should be v0.x.x
+retract v0.1.0-beta.1
 
 require (
 	github.com/boombuler/barcode v1.1.0
