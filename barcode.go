@@ -3,7 +3,6 @@
 package barcodemail
 
 import (
-	_ "fmt"
 	"image/png"
 	"math/rand"
 	"os"
@@ -11,7 +10,6 @@ import (
 	"time"
 
 	"github.com/boombuler/barcode"
-	_ "github.com/boombuler/barcode/code128"
 	"github.com/boombuler/barcode/qr"
 )
 
