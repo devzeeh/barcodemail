@@ -1,5 +1,3 @@
 .env
-# hide test folder with test.go files
 testing/
-
 
