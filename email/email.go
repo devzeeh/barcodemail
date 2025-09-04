@@ -49,6 +49,9 @@ type MailData struct {
 // It uses the gomail package to create and send the email.
 func Mail(Mail MailData) {
 	// sanity check
+	if senderEmail == "" || senderPassword == "" || senderName == "" {
+		log.Fatal("Sender email, password, and name must be set before sending an email.")
+	}
 
 	// SMTP Config of Gmail
 	smtpHost := "smtp.gmail.com"
