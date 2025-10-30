@@ -5,6 +5,8 @@ go 1.25.0
 retract (
 	v1.1.0-beta.1 // published by mistake
 	v1.0.0 // published by mistake
+	v1.0.1 // practice publishing
+	v1.0.2 // practice publishing
 )
 
 require (
