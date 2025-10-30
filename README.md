@@ -1,4 +1,7 @@
 # barcodemail
+[![GoDoc](https://godoc.org/github.com/devzeeh/barcodemail?status.svg)](https://pkg.go.dev/github.com/devzeeh/barcodemail)
+[![MITlicensed](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/devzeeh/barcodemail/main/LICENSE)
+[![GitHub Repo stars](https://img.shields.io/github/stars/devzeeh/barcodemail?style=social&label=Stars)](https://github.com/devzeeh/barcodemail/stargazers)
 
 Generate **QR codes** in Go, and send them via email.
 
@@ -53,7 +56,7 @@ func main() {
 
         // Prepare email data
 	sendData := email.MailData{
-		From: "user@test.com",
+		From: 	 "user@test.com",
 		Subject: "Barcodemail",
 		Body:    body,
 		Qrcode:  file,
