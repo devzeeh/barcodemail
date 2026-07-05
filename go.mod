@@ -1,4 +1,4 @@
-module github.com/devzeeh/barcodemail
+module barcodemail
 
 go 1.25.0
 
